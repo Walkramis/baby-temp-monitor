@@ -11,6 +11,7 @@
 		E9741F4A2703978900DB5229 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9741F492703978900DB5229 /* ContentView.swift */; };
 		E9741F4C2703978A00DB5229 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9741F4B2703978A00DB5229 /* Assets.xcassets */; };
 		E9741F4F2703978A00DB5229 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9741F4E2703978A00DB5229 /* Preview Assets.xcassets */; };
+		E9741F5727039B7C00DB5229 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9741F5627039B7C00DB5229 /* BLEManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E9741F4B2703978A00DB5229 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9741F4E2703978A00DB5229 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9741F502703978A00DB5229 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9741F5627039B7C00DB5229 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				E9741F472703978900DB5229 /* SwiftUITestApp.swift */,
 				E9741F492703978900DB5229 /* ContentView.swift */,
+				E9741F5627039B7C00DB5229 /* BLEManager.swift */,
 				E9741F4B2703978A00DB5229 /* Assets.xcassets */,
 				E9741F502703978A00DB5229 /* Info.plist */,
 				E9741F4D2703978A00DB5229 /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9741F4A2703978900DB5229 /* ContentView.swift in Sources */,
+				E9741F5727039B7C00DB5229 /* BLEManager.swift in Sources */,
 				E9741F482703978900DB5229 /* SwiftUITestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
