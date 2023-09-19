@@ -51,82 +51,83 @@ struct ContentView_asd: View {
         
         
         
-        VStack (spacing: 10) {
-
-
-            Text("Bluetooth Devices")
-                .font(.largeTitle)
-                .frame(maxWidth: .infinity, alignment: .center)
-            List() {
-                List(bleManager.peripherals) { peripheral in
-                    HStack {
-                        Button(action:{
-                                bleManager.myCentral.connect(peripheral.peripheral)
-                                print("Connecting")}){
-                        Text(peripheral.name)
-                        Spacer()
-                        Text(String(peripheral.rssi))
-                        }
-                    }
-                }.frame(height: 300)
-            }.frame(height: 300)
-
-            Spacer()
-
-            Text("STATUS")
-                .font(.headline)
-
-
-            // Status goes here
-            if bleManager.isSwitchedOn {
-
-                Text("Bluetooth is switched on")
-                    .foregroundColor(.green)
-            }
-            else {
-                Text("Bluetooth is NOT switched on")
-                    .foregroundColor(.red)
-            }
-            Spacer()
-
-            HStack {
-                VStack (spacing: 10) {
-                    Button(action: {
-                        bleManager.startScanning()                    }) {
-                        Text("Start Scanning")
-                    }
-                    Button(action: {
-                        bleManager.stopScanning()                    }) {
-                        Text("Stop Scanning")
-                    }
-                }.padding()
-
-                Spacer()
-
-                VStack (spacing: 10) {
-                    Button(action: {
-                        print("Start Advertising")
-                        bleManager.isConnected = true
-                        self.signInSuccess = true
-
-                    }) {
-                        Text("Start Advertising")
-                    }
-                    Button(action: {
-                        print("Stop Advertising")
-                        bleManager.temperatures.insert(CGFloat(Int.random(in: 15...25)), at: 0)
-                        if (bleManager.temperatures.count > 10){
-                            bleManager.temperatures.removeLast()
-                        }
-//                        bleManager.temperatures.append(CGFloat(Int.random(in: 15...25)))
-                        bleManager.doCalculatePositions()
-                    }) {
-                        Text("Stop Advertising")
-                    }
-                }.padding()
-            }
-            Spacer()
-        }
+        //VStack (spacing: 10) {
+            Text("Trying to connect to temperature sensor...").font(.largeTitle)
+            //                .frame(maxWidth: .infinity, alignment: .center)
+//
+//            Text("Bluetooth Devices")
+//                .font(.largeTitle)
+//                .frame(maxWidth: .infinity, alignment: .center)
+//            List() {
+//                List(bleManager.peripherals) { peripheral in
+//                    HStack {
+//                        Button(action:{
+//                                bleManager.myCentral.connect(peripheral.peripheral)
+//                                print("Connecting")}){
+//                        Text(peripheral.name)
+//                        Spacer()
+//                        Text(String(peripheral.rssi))
+//                        }
+//                    }
+//                }.frame(height: 300)
+//            }.frame(height: 300)
+//
+//            Spacer()
+//
+//            Text("STATUS")
+//                .font(.headline)
+//
+//
+//            // Status goes here
+//            if bleManager.isSwitchedOn {
+//
+//                Text("Bluetooth is switched on")
+//                    .foregroundColor(.green)
+//            }
+//            else {
+//                Text("Bluetooth is NOT switched on")
+//                    .foregroundColor(.red)
+//            }
+//            Spacer()
+//
+//            HStack {
+//                VStack (spacing: 10) {
+//                    Button(action: {
+//                        bleManager.startScanning()                    }) {
+//                        Text("Start Scanning")
+//                    }
+//                    Button(action: {
+//                        bleManager.stopScanning()                    }) {
+//                        Text("Stop Scanning")
+//                    }
+//                }.padding()
+//
+//                Spacer()
+//
+//                VStack (spacing: 10) {
+//                    Button(action: {
+//                        print("Start Advertising")
+//                        bleManager.isConnected = true
+//                        self.signInSuccess = true
+//
+//                    }) {
+//                        Text("Start Advertising")
+//                    }
+//                    Button(action: {
+//                        print("Stop Advertising")
+//                        bleManager.temperatures.insert(CGFloat(Int.random(in: 15...25)), at: 0)
+//                        if (bleManager.temperatures.count > 10){
+//                            bleManager.temperatures.removeLast()
+//                        }
+////                        bleManager.temperatures.append(CGFloat(Int.random(in: 15...25)))
+//                        bleManager.doCalculatePositions()
+//                    }) {
+//                        Text("Stop Advertising")
+//                    }
+//                }.padding()
+//            }
+            //Spacer()
+        //}
     }
 }
 
@@ -143,7 +144,7 @@ struct AppHome: View {
     var body: some View {
         VStack{
             Text("Stroller temperature").padding(.top,40).padding(.bottom, 40).font(.largeTitle)
-            Text(bleManager.currentTemperature).padding(.top,40).padding(.bottom, 40).font(.largeTitle)        .foregroundColor((Float(bleManager.currentTemperature) ?? 0 > 18.0 ) ? .green : .red)
+            Text(bleManager.currentTemperature).padding(.top,40).padding(.bottom, 40).font(.largeTitle)        .foregroundColor((Float(bleManager.currentTemperature) ?? 0 > 25.0 ) ? .green : .red)
 
         ZStack{
 
